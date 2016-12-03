@@ -14,9 +14,21 @@ inputName(){
 	NAME=$name
 }
 
+checkoutFileExit(){
+	read -p 'file path: ' path
+	if [ -e $path ]
+	then 
+		echo "file: ${path}"
+	else
+		echo "file not exist"
+	fi
+}
+
 main(){
 	inputName
 	echo $NAME
+
+	checkoutFileExit
 
 	read -s -p "请输入密码: " pwd              
 	echo "your password is $pwd"
